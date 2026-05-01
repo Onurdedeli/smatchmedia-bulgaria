@@ -7,7 +7,18 @@
   <meta name="description" content="Smatch Media Bulgaria предоставя реклама в свързана телевизия (CTV), задвижвана от изкуствен интелект и данни, в Smart TV устройства в България — инвентар на Whale TV, Vidaa и Roku, програматично и директно." />
   <link rel="alternate" hreflang="bg" href="./" />
   <link rel="alternate" hreflang="en" href="en/" />
-  <link rel="alternate" hreflang="x-default" href="./" />
+  <link rel="alternate" hreflang="x-default" href="en/" />
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('smatch_lang')) return;
+        var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (lang.indexOf('bg') !== 0) {
+          location.replace('en/' + location.search + location.hash);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">

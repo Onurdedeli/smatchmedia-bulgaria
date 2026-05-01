@@ -56,6 +56,13 @@ const io = new IntersectionObserver((entries) => {
 
 revealTargets.forEach(el => io.observe(el));
 
+// Persist explicit language choice — disables auto-redirect on subsequent visits
+document.querySelectorAll('.lang-switch a[hreflang]').forEach(a => {
+  a.addEventListener('click', () => {
+    try { localStorage.setItem('smatch_lang', a.getAttribute('hreflang')); } catch (e) {}
+  });
+});
+
 // Position .unit__brand inside .unit__visual (it lives outside in markup for semantic flow)
 document.querySelectorAll('.unit').forEach(unit => {
   const brand = unit.querySelector('.unit__brand');
