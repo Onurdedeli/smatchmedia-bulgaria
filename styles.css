@@ -109,7 +109,6 @@ p { margin: 0 0 1em; }
 }
 .logo__text {
   font-weight: 800;
-  text-transform: lowercase;
 }
 .logo__dot {
   width: 10px;
